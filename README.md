@@ -52,9 +52,9 @@ or
 
 ```sh
 const acceptanceKeywords = [
-	'Accepted',
-	'Approved',
-  // add it here
+    'Accepted',
+    'Approved',
+    // add it here
 ]
 ```
 
