@@ -1,0 +1,23 @@
+{
+	"manifest_version": 3,
+	"name": "email checker",
+	"version": "1.0",
+	"description": "An extension to check email offer if you get Accepted or Rejected",
+	"permissions": ["activeTab", "storage", "scripting"],
+	"host_permissions": ["https://mail.google.com/"],
+	"icons": {
+		"48": "images/icon48.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://mail.google.com/*"],
+			"js": ["content.js"]
+		}
+	],
+	"action": {
+		"default_popup": "index.html",
+		"default_icon": {
+			"48": "images/icon48.png"
+		}
+	}
+}
