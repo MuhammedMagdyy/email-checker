@@ -111,4 +111,6 @@ const acceptanceKeywords = [
 	'Your application has been accepted',
 	"You've been chosen",
 	'Admission granted',
+	'we are glad to inform you',
+	'you have been shortlisted',
 ];
