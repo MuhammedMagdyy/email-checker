@@ -89,22 +89,32 @@ document.addEventListener('DOMContentLoaded', function () {
 					const content = emails.textContent.toLowerCase();
 					const background = document.querySelector('.gs');
 
-					const containsAcceptanceKeywords = acceptanceKeywords.some((keyword) => content.includes(keyword.toLowerCase()));
-					const containsRejectionKeywords = rejectionKeywords.some((keyword) => content.includes(keyword.toLowerCase()));
+					fetch('http://localhost:3000/api/checker', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ emailText: content }),
+					}).then((response) => {
+						console.log(response.json());
+					});
 
-					if (containsAcceptanceKeywords) {
-						chrome.runtime.sendMessage({ message: "that's why you are the GOAT!!" });
-						background.style.backgroundColor = '#5EEAD4';
-						background.style.border = '2px solid #14B8A6';
-						background.style.borderRadius = '5px';
-						background.style.padding = '10px';
-					} else if (containsRejectionKeywords) {
-						chrome.runtime.sendMessage({ message: 'nah!, you thought you were good! huh' });
-						background.style.backgroundColor = '#FDA4AF';
-						background.style.border = '2px solid #E11D48';
-						background.style.borderRadius = '5px';
-						background.style.padding = '10px';
-					}
+					// const containsAcceptanceKeywords = acceptanceKeywords.some((keyword) => content.includes(keyword.toLowerCase()));
+					// const containsRejectionKeywords = rejectionKeywords.some((keyword) => content.includes(keyword.toLowerCase()));
+
+					// if (containsAcceptanceKeywords) {
+					// 	chrome.runtime.sendMessage({ message: "that's why you are the GOAT!!" });
+					// 	background.style.backgroundColor = '#5EEAD4';
+					// 	background.style.border = '2px solid #14B8A6';
+					// 	background.style.borderRadius = '5px';
+					// 	background.style.padding = '10px';
+					// } else if (containsRejectionKeywords) {
+					// 	chrome.runtime.sendMessage({ message: 'nah!, you thought you were good! huh' });
+					// 	background.style.backgroundColor = '#FDA4AF';
+					// 	background.style.border = '2px solid #E11D48';
+					// 	background.style.borderRadius = '5px';
+					// 	background.style.padding = '10px';
+					// }
 				}
 				// Call the changeEmailColors function
 				changeEmailColors();
