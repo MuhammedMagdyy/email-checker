@@ -1,33 +1,38 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
+import { TextServiceClient } from '@google-ai/generativelanguage';
+import { GoogleAuth } from 'google-auth-library';
 import { config } from 'dotenv';
 config();
-import OpenAI from 'openai';
 
-const openai = new OpenAI({
-	apiKey: 'pk-xwSNyJGXTIASLOhCIUGIZyHiAXzrLghvQOjCVOhfdHJdebak',
-	basePath: 'https://api.pawan.krd/v1/chat/completions',
+const app = express();
+const port = 3000;
+app.use(bodyParser.json());
+app.use(cors());
+
+const MODEL_NAME = 'models/text-bison-001';
+const API_KEY = process.env.API_KEY;
+
+const client = new TextServiceClient({
+	authClient: new GoogleAuth().fromAPIKey(API_KEY),
 });
 
-const res = await openai.chat.completions.create({
-	model: 'text-davinci-003',
-	prompt: 'Human: Hello\nAI:',
-	temperature: 0.7,
-	max_tokens: 256,
-	top_p: 1,
-	frequency_penalty: 0,
-	presence_penalty: 0,
-	stop: ['Human: ', 'AI: '],
+app.get('/api/checker', (req, res) => {
+	const emailText = req.body.emailText + `according to this am i accepted in this position or not reply only with one word "accept" or "reject"`;
+
+	client
+		.generateText({
+			model: MODEL_NAME,
+			prompt: {
+				text: emailText,
+			},
+		})
+		.then((result) => {
+			console.log(JSON.stringify(result, null, 2));
+		});
 });
 
-console.log(response.data.choices[0].text);
-// const app = express();
-// const port = 3000;
-
-// app.use(bodyParser.json());
-
-// app.get('/api/checker', (req, res) => {
-// 	const emailText = req.body.emailText;
-
-// 	openai.createChatComp;
-// });
+app.listen(port, () => {
+	console.log('opend');
+});
