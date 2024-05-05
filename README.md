@@ -1,5 +1,5 @@
 # email-checker
-An extension to check email offer if you get Accepted or Rejected
+An extension to check email offer if you got Accepted or Rejected
 
 This extension works based on keywords that offten used in an email offer.
 
