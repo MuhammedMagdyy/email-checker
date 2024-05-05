@@ -12,7 +12,7 @@ And for acceptance...
 ![Screenshot 2023-09-11 at 9 13 00 PM (1)](https://github.com/OsamaNagi/email-checker/assets/63210048/a352a465-b16b-4bff-b796-7858f415bbc1)
 
 > [!NOTE]
-> This extension was made for instantly to know wether you got accepted or not.
+> This extension was made for instantly knowing wether you got accepted or not.
 > But always read your email carefully despite the result.
 
 ## Installation
