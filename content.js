@@ -46,6 +46,10 @@ const rejectionKeywords = [
 	'not been selected',
 	'we have received a large number of applications, despite our urgent need for candidates',
 	'we have received a large number of applications',
+	`Unfortunately after careful discussion we've decided we won't be moving forward with you`,
+	'Thank you for your interest',
+	'we have decided to move forward with other candidates',
+	'we have decided to move forward with other applicants',
 ];
 
 const acceptanceKeywords = [
@@ -71,6 +75,12 @@ const acceptanceKeywords = [
 	'Admission granted',
 	'we are glad to inform you',
 	'you have been shortlisted',
+	'We formally offer you',
+	'You have been selected',
+	'You have been accepted',
+	'We have some good news',
+	'You have an offer',
+	'Congratulations'
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
