@@ -1,61 +1,115 @@
-# email-checker
-An extension to check email offer if you got Accepted or Rejected
+# Email Checker 📧
 
-This extension works based on keywords that offten used in an email offer.
+An advanced browser extension designed to instantly identify whether an email offer is an acceptance or a rejection.
 
-If the email have a matched keyword for rejection it will display something like this...
+This tool leverages a keyword-matching algorithm to provide instant feedback on your email content, saving time and reducing uncertainty.
 
-![Screenshot 2023-09-11 at 9 12 35 PM (1)](https://github.com/OsamaNagi/email-checker/assets/63210048/55a5ad22-0599-419a-9b7e-82edd03a7b76)
+---
 
-And for acceptance...
+> ⚠️ **Important Reminder:**
+> While this extension provides quick insights to help you identify the status of your email offers, it is crucial to carefully read and understand your emails to ensure no important details are overlooked.
 
-![Screenshot 2023-09-11 at 9 13 00 PM (1)](https://github.com/OsamaNagi/email-checker/assets/63210048/a352a465-b16b-4bff-b796-7858f415bbc1)
+## Table of Contents 📚
 
-> [!NOTE]
-> This extension was made for instantly knowing wether you got accepted or not.
-> But always read your email carefully despite the result.
+1. [Features](#features)
+2. [Installation Guide](#installation-guide)
+3. [Contribution Guidelines](#contribution-guidelines)
+   - [Adding Keywords](#adding-keywords)
+   - [Submitting Changes](#submitting-changes)
+4. [Feedback and Support](#feedback-and-support)
+5. [License](#license)
 
-## Installation
+---
 
-1. Clone the repository:
+## Features 🎯
 
-```sh
-git@github.com:OsamaNagi/email-checker.git
-```
+- **Rejection Detection:** If the email contains keywords commonly associated with rejections, the extension will display a clear rejection message:
 
-2. Go to Extensions -> manage extensions
+  ![Rejection Screenshot](https://github.com/OsamaNagi/email-checker/assets/63210048/55a5ad22-0599-419a-9b7e-82edd03a7b76)
 
-3. Turn on Developer mode
+- **Acceptance Detection:** Similarly, if the email contains keywords related to acceptance, a success message will be shown:
 
-4. Upload the extension
+  ![Acceptance Screenshot](https://github.com/OsamaNagi/email-checker/assets/63210048/a352a465-b16b-4bff-b796-7858f415bbc1)
 
-And you are good to go.
+---
 
-To run the Extension open your email and simply press on the extension icon.
+## Installation Guide 🛠️
 
-> [!NOTE]
-> If you didn't see an action it's due to lack of the keywords.
-> feel free to contribute to the repo by adding more descriptive keywords.
+Follow these steps to set up the extension:
 
-## How to contribute
+1. **Clone the Repository:**
 
-Just add the key word to the `rejectionKeywords` or `acceptanceKeywords` array.
+   ```bash
+   git clone git@github.com:OsamaNagi/email-checker.git
+   ```
 
-```sh
+2. **Enable Developer Mode:**
+
+   - Open your browser settings.
+   - Navigate to `Extensions` and enable `Developer mode`.
+
+3. **Load the Extension:**
+
+   - Click on `Load unpacked` and select the cloned repository folder.
+
+4. **Start Using:**
+   - Open your email inbox, click the extension icon, and let it analyze your emails instantly.
+
+> **Pro Tip:** Ensure the keywords in the code match the language used in your email communications for optimal results.
+
+---
+
+## Contribution Guidelines 🤝
+
+We welcome contributions to make the extension smarter and more inclusive! Here's how you can help:
+
+### Adding Keywords 📝
+
+Enhance detection accuracy by expanding the keyword lists in the code:
+
+#### For Rejections:
+
+```javascript
 const rejectionKeywords = [
   'Regret',
   "We're sorry",
-  // add it here
-]
+  'Unfortunately',
+  'Declined',
+  // Add more rejection-related keywords here
+];
 ```
-or 
 
-```sh
+#### For Acceptances:
+
+```javascript
 const acceptanceKeywords = [
-    'Accepted',
-    'Approved',
-    // add it here
-]
+  'Accepted',
+  'Approved',
+  'Congratulations',
+  'Welcome aboard',
+  'Offer extended',
+  // Add more acceptance-related keywords here
+];
 ```
 
+### Submitting Changes 📥
 
+1. Fork the repository.
+2. Create a new branch for your updates.
+3. Submit a pull request with a clear description of your changes.
+
+---
+
+## Feedback and Support 💬
+
+Your feedback is invaluable! If you encounter any issues or have suggestions, please open an issue in the repository or reach out via the contact details provided in the GitHub profile.
+
+---
+
+### License 📜
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the extension responsibly.
+
+---
+
+Make your email management smarter with **Email Checker**! 📧🚀
